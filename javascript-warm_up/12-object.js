@@ -7,4 +7,5 @@ const myObject = {
 console.log(myObject);
 
 //replace the value 12 with 89
-myObject[12] = 89;
+myObject.value = 89;
+console.log(myObject);
