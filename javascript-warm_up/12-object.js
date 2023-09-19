@@ -2,9 +2,9 @@
 // create an object
 const myObject = {
   type: 'object',
-  value: [12, 89]
+  value: 12
 };
 console.log(myObject);
 
 //replace the value 12 with 89
-//myObject.value = 89;
+myObject[12] = 89;
