@@ -1,6 +1,5 @@
 #!/usr/bin/node
 // create a function add
-function add(a, b){
+module.exports.add = function(a, b){
   return a + b;
-}
-let sum = 
+};
