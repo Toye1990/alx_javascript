@@ -1,8 +1,9 @@
 //create a const callmemoby
 const callMeMoby = (x, theFunction) => {
-    for (i = 0; i < x; i++){
+    for (let i = 0; i < x; i++){
         theFunction();
     }
 }
 
-module.export = {callMeMoby}
+module.exports = {callMeMoby}
+
