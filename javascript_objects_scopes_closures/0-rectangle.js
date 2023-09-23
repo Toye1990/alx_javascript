@@ -6,8 +6,7 @@ class Rectangle{
     }
 
  rectangle(){
-    
+
  }
 }
 
-const rn = new Rectangle();
