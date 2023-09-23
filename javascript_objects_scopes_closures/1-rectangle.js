@@ -1,7 +1,5 @@
 //create a new class
 
-const Rectangle = require('./1-rectangle');
-
 class Rectangle{
     constructor(w, h){
      this.width = w;
@@ -10,3 +8,5 @@ class Rectangle{
 }
 
 r1 = new Rectangle();
+console.log(r1.width);
+console.log(r1.height);
