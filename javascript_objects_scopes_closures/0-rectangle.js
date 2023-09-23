@@ -2,6 +2,8 @@
 
 class Rectangle{
     constructor(){
-        
+
     }
 }
+
+const rn = new Rectantle();
