@@ -7,4 +7,3 @@ class Rectangle{
     }
 }
 
-r1 = new Rectangle();
