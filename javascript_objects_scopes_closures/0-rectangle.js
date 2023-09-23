@@ -7,6 +7,8 @@ class Rectangle{
 
  rectangle(){
  }
- 
+
 }
+
+const ri = Rectangle()
 
