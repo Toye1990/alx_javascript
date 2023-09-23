@@ -10,5 +10,4 @@ class Rectangle{
 
 }
 
-const ri = Rectangle()
 
