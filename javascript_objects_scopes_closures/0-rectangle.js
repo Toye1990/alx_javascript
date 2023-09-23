@@ -6,4 +6,4 @@ class Rectangle{
     }
 }
 
-const rn = new Rectantle();
+const rn = new Rectangle();
