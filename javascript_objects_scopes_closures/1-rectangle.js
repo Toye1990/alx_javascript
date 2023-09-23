@@ -8,3 +8,5 @@ class Rectangle{
      this.height = h;
     }
 }
+
+r1 = new Rectangle();
