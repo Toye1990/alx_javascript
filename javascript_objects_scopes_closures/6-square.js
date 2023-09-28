@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 //import class square
 const Square = require('./5-rectangle.js').Square;
 
