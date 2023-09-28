@@ -3,10 +3,6 @@
 
 class Rectangle{
     
-
- rectangle(){
- }
-
 }
 
 
