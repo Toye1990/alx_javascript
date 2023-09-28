@@ -2,7 +2,7 @@
 //create class rectangle
 
 class Rectangle{
-    
+   constructor(){}
 }
 
 
