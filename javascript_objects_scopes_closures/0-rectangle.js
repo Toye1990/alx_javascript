@@ -1,11 +1,8 @@
 #!/usr/bin/node
-
-//empty class notation
+//create class rectangle
 
 class Rectangle{
-    constructor(){
-
-    }
+    
 
  rectangle(){
  }
