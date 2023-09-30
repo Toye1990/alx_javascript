@@ -1,5 +1,13 @@
 #!/usr/bin/node
 
+const request = require('request');
+
+const url = "";
+
+request.get(url, function(response){
+  console.log('code:', response.statusCode)
+})
+
 /*const req = require('request');
 
 async function displayNow(url){
@@ -10,11 +18,11 @@ async function displayNow(url){
 
 
 
-const req = require('request');
+/*const req = require('request');
 
 function displayUrl(url){
     req.request(url)
     .on('response', response => {
         console.log('code: ', response.statusCode);
     })
-}
+}*/
