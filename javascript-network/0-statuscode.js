@@ -1,12 +1,12 @@
 #!/usr/bin/node
-
 const request = require('request');
 
-const url = "";
+async function statUrl(url){
+  const response = await fetch(url);
+  const statusUse = response.status;
+  console.log(`code: ${statusUse}`);
+}
 
-request.get(url, function(response){
-  console.log('code:', response.statusCode)
-})
 
 /*const req = require('request');
 
