@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = require('request');
+const req = require('request');
 
 async function countmovie(APIURL){
     const response = await request.get(APIURL);
@@ -14,3 +14,4 @@ async function countmovie(APIURL){
     }
     return count;
 }
+
