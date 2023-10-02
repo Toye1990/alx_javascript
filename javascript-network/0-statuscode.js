@@ -17,7 +17,7 @@ const request = require('request');
 
 function displayStatusCode(url) {
   request.get(url, (error, response) => {
-    if (error) {
+    if (error){
       console.error('Error:', error);
     } else {
       console.log(`Code: ${response.statusCode}`);
