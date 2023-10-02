@@ -27,10 +27,5 @@ function statUrl(url){
 
 
 
-async function statUrl(url){
-  const response = await fetch(url);
-  const statusUse = response.status;
-  console.log(`code: ${statusUse}`);
-}*/
 
 
