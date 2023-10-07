@@ -10,7 +10,7 @@ function printMovie(episodeNumber){
 
     //make a request to the API
    request(url, (error, response, body) =>{
-    if(!error && statusCode === 200){
+    if(!error && response.statusCode === 200){
         filmData = JSON.parse(body);
         
         //check if the episode number matches
@@ -24,3 +24,4 @@ function printMovie(episodeNumber){
     }
    })
 }
+printMovie(episodeNumber);
