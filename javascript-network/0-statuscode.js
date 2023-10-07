@@ -13,4 +13,4 @@ function responUrl(url){
   });
 }
 
-responUrl();
+responUrl(url);
