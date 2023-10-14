@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+//create an array for string list items
+
+availableItems = ['Shampoo', 'soap', 'sponge', 'Water'];
+if(!window.localstorage){
+    alert('sorry your browser does not support web storage. Try again with a better one');
+}
+
+function addItemTocart(item){
+  localstorage.setItem(item, true);
+}
+
+function createStore(){
+    const docs = document.createElement('ul');
+
+    for(const item of availableItems){
+ const list = document.createElement('li');
+ list.textContent = item
+ list.addEventListener('click', () => addItemTocart(item));
+ docs.appendChild(list);
+    }
+}
+
+function displayCart(){
+  //get the number of items in the cart from local storage
+  const numberCart = Object.keys(localStorage).length;
+
+  //if there are items in the cart, do nothing
+  if (numberCart == 0) {
+    return;
+  }
+
+//create paragraph element to display text
+const paragraph = document.createElement('p');
+paragraph.textContent = `you previously have ${numberCart} items in your cart`;
+document.body.appendChild('paragraph');
+}
+
+createStore();
+displayCart();
+  </script>
+</body>
+</html>
+

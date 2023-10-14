@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const availableItems = ['shampoo', 'soap', 'sponge', 'water'];
+
+        //display text if sessionStorage not available
+
+        if (!window.sessionStorage) {
+            alert('Sorry, your browser does not support Web storage. Try again with a better one');
+        }
+
+//create function getCartFromStorage
+
+function getCartFromStorage(){
+    const cartNow = sessionStorage.getItem('cart');
+//If there is no cart, it should return an empty object
+    if (cartNow === null) {
+        return {};
+    }
+   return JSON.parse(cartNow);
+}
+
+function addItemToCart(){
+    cart = getCartFromStorage();
+
+    if (cart[item] === undefined) {
+        cart[item] = 1;
+    }else{
+        cart[item]++;
+    }
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
+//create new function removeItemFromCart()
+
+function removeItemFromCart(item){
+  cart = getCartFromStorage();
+
+  delete cart[items];
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+  displayCart();
+}
+
+function clearCart(){
+    sessionStorage.clear();
+    displayCart();
+}
+
+//create new function createStore
+function createStore(){
+    const h2 = document.createElement('h2');
+
+    h2.textContent = 'Available products';
+    document.body.appendChild(h2);
+
+    //create a list tag
+    const ul = document.createElement('ul')
+    for(const item of availableItems){
+     const li = document.createElement('li');
+     li.textContent = item;
+     li.addEventListener('click', () => addItemToCart(item));
+     ul.appendChild('li');
+    }
+document.body.appendChild(ul);
+}
+
+function displayCart(){
+    const h22 = document.createElement('h2');
+    h22.textCount = 'Your cart';
+    document.body.appendChild(h22);
+
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    //If the div tag already exist, it should remove any list child
+    while(div.firstChild){
+    div.removeChild(div.firstChild);
+    }
+    //update the cart
+updateCart(div);
+
+//create a function updateCart
+
+function updateCart(div){
+    //It should add a list to the div tag created previously
+   
+    const cart = getCartFromStorage();
+
+     //If the cart is empty, it should add an item 'Your cart is empty'
+     if (Object.keys(cart).length == 0) {
+        const p = document.createElement('p');
+        p.textContent = 'your cart is empty';
+        div.appendChild(p);
+     }else{
+        /*If the cart is not empty, it should add the list of items within the
+        cart with the following format: ITEM_NAME x QUANTITY (remove)*/
+        const ul = document.createElement('ul');
+        div.appendChild(ul);
+
+        for(const item of cart){
+            const li = document.createElement('li');
+            li.textContent = `${ITEM_NAME} × ${cart[item]} (remove)`;
+
+            //add a remove button to the list
+       const realbutton = document.createElement('button');
+       realbutton.textContent = 'remove';
+       realbutton.addEventListener('click', () => removeItemFromCart(item));
+       li.appendChild(realbutton);
+
+       ul.appendChild(li);
+        }
+     }
+}
+
+/*At the top of the cart, add an item named Clear my cart.
+ When the user clicks on it, it should call the function */
+
+ const newbutton = document.createElement('button');
+ newbutton.textContent = 'clear my cart';
+ newbutton.addEventListener('click', clearCart);
+ div.appendChild(newbutton);
+}
+
+createStore();
+displayCart();
+    </script>
+</body>
+</html>
