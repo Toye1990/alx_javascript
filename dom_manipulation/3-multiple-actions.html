@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating and Removing Elements</title>
+</head>
+<body>
+  <div id="container">fg</div>
+
+  <script>
+
+    const container = document.getElementById('container');
+
+  	const paragraph = document.createElement('p');
+    paragraph.textContent = 'New paragraph';
+    container.appendChild(paragraph);
+
+    const button = document.createElement('button');
+button.textContent = 'Toggle paragraph';
+button.addEventListener('click', () => {
+  if (paragraph.style.display === 'none') {
+    paragraph.style.display = 'block';
+  } else {
+    paragraph.style.display = 'none';
+  }
+})
+
+container.appendChild(button);
+
+
+/*const container = document.getElementById('container');
+paragraph = document.createElement('p');
+paragraph.textContent = 'new paragraph';
+container.appendChild('paragraph');
+
+const button = document.createElement('button');
+button.textContent = 'press me';
+button.addEventListener('click', () => {
+  if (paragraph.style.display === 'none') {
+    paragraph.style.display = 'block';
+  } else {
+    paragraph.style.display = 'none';
+  }
+});
+
+container.appendChild('button');*/
+
+  </script>
+</body>
+</html>
